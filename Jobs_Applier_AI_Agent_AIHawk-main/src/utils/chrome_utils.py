@@ -10,6 +10,9 @@ from src.logging import logger
 def chrome_browser_options():
     logger.debug("Setting Chrome browser options")
     options = Options()
+    if os.environ.get("CHROME_HEADLESS", "false").lower() == "true":
+        options.add_argument("--headless=new")
+        logger.debug("Running Chrome in headless mode")
     options.add_argument("--start-maximized")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")

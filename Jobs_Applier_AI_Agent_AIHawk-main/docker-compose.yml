@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  jobs-applier:
+    build: .
+    image: jobs-applier-aihawk
+    container_name: jobs-applier
+    environment:
+      - CHROME_HEADLESS=true
+    volumes:
+      # Mount data_folder so you can edit configs without rebuilding
+      - ./data_folder:/app/data_folder
+      # Output folder to access generated resumes/cover letters
+      - ./data_folder/output:/app/data_folder/output
+    stdin_open: true
+    tty: true

@@ -29,7 +29,7 @@ positions:
   - Software engineer
 
 locations:
-  - Germany
+  - Canada
 
 apply_once_at_company: true
 
@@ -43,5 +43,4 @@ title_blacklist:
   - word1
   - word2
 
-location_blacklist:
-  - Brazil
+location_blacklist: []
